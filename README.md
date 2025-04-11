@@ -1,1 +1,1 @@
-[Civic Code AI](https://civiccodeai.com)
+[Copytack](https://copytack.dev)
