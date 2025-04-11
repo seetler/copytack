@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta name="viewport" content="width=device-width">
+    <title>Copytack | AI Text Detector</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1839474213054333" crossorigin="anonymous"></script>
+
+    <head>
+        <!-- Basic Page Needs -->
+        <meta charset="UTF-8">
+        <title>Copytack | AI Text Detector</title>
+        <meta name="description" content="Copytack is an advanced tool that checks whether your text is written by an AI. Fast, accurate, and reliable AI text detection for essays, articles, and more.">
+        <meta name="keywords" content="AI text detector, detect AI content, AI vs human writing, AI checker, GPT detector, essay checker, AI plagiarism, Copytack">
+        <meta name="author" content="Copytack Team">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+        <!-- Open Graph (Facebook & other platforms) -->
+        <meta property="og:title" content="Copytack | AI-Generated Text Detector">
+        <meta property="og:description" content="Check whether your text is AI-generated using Copytack. Ideal for teachers, writers, and editors.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://copytack.dev">
+        <meta property="og:image" content="https://www.copytack.com/images/Logo.png">
+      
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Copytack | AI-Generated Text Detector">
+        <meta name="twitter:description" content="Easily detect if your content was written by AI with Copytack's powerful analysis.">
+        <!-- <meta name="twitter:image" content="https://www.copytack.com/images/social-preview.jpg"> -->
+      
+        <!-- Robots & Crawling -->
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://copytack.dev.com">
+      
+        <!-- Favicons -->
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      
+
+      
+        <!-- Performance Optimizations -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+      
+        <!-- Structured Data (Optional but recommended for SEO) -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Copytack",
+          "url": "https://www.copytack.com",
+          "description": "Copytack is an AI text detector that identifies whether a piece of content was written by artificial intelligence.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.copytack.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }
+        </script>
+   
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="/static/script.js"></script>
+
+    <style>
+        /* Flashing animation */
+        @keyframes flashAndFade {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .flashing {
+            animation: flashAndFade 1.5s infinite;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="encompass">   
+        
+        <!-- <img src="{{ url_for('static', filename='Logo.png') }}" alt="Logo" style="margin-bottom: 20px; width: 100px; box-shadow: 1px 1px 3px rgba(51, 54, 51, 0.5);" /> -->
+
+        <div id="intro" class="answer_box">Check if it's written by an AI.</div>
+
+        <div id="response" class="answer_box hidden" ></div>
+        <br>
+
+        <textarea id="prompt" class="answer_box" placeholder="Paste your text here." style="height: 300px;"></textarea>
+        <br>
+        <br>
+
+        <button id="sendButton" onclick="return showTextbox()">Submit</button>
+        <br>
+
+        <div id="textboxContainer">
+            <div id="fillerBox" class="filler hidden">
+                Answering your Question...
+            </div>
+        </div>
+
+    </div> 
+
+    
+    <script>
+        
+        function showTextbox() {
+            var fillerBox = document.getElementById("fillerBox");
+
+            // ✅ Reset the text immediately
+            fillerBox.innerText = "Answering your Question...";
+            fillerBox.classList.remove("hidden");
+            fillerBox.classList.add("flashing");
+
+            // ✅ Clear previous timeouts (Prevents multiple timers stacking up)
+            clearTimeout(window.textTimeout1);
+            clearTimeout(window.textTimeout2);
+            clearTimeout(window.textTimeout3);
+            clearTimeout(window.textTimeout4);
+            clearTimeout(window.textTimeout5);
+            clearTimeout(window.textTimeout6);
+
+            // ✅ Restart the sequence of messages
+            window.textTimeout1 = setTimeout(function() {
+                fillerBox.innerText = "This can take a minute...";
+            }, 5000); // 5 seconds
+
+            window.textTimeout2 = setTimeout(function() {
+                fillerBox.innerText = "Sign up to ...";
+            }, 10000); // 10 seconds
+
+            window.textTimeout3 = setTimeout(function() {
+                fillerBox.innerText = "Don't refresh the page...";
+            }, 15000); // 15 seconds
+
+            window.textTimeout4 = setTimeout(function() {
+                fillerBox.innerText = "Finalizing the Details...";
+            }, 20000); // 20 seconds
+
+            window.textTimeout5 = setTimeout(function() {
+                fillerBox.innerText = "Organizing our response...";
+            }, 25000); // 25 seconds
+
+            window.textTimeout6 = setTimeout(function() {
+                fillerBox.innerText = "Almost there...";
+            }, 30000); // 30 seconds
+        }
+
+    </script>
+
+</body>
+
+</html>
